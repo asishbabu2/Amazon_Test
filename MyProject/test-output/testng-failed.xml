@@ -6,8 +6,8 @@
       <class name="MyPkg.AmazonBuy">
         <methods>
           <include name="addToCart"/>
+          <include name="stop"/>
           <include name="driverInstance"/>
-          <include name="close"/>
         </methods>
       </class> <!-- MyPkg.AmazonBuy -->
     </classes>
