@@ -13,12 +13,14 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import MyPkg.AmazonHomePage;
+import MyPkg.AmazonLogin;
 import MyPkg.AmazonProductPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class AmazonTest {
 
 	WebDriver driver;
+	AmazonLogin obj;
 	AmazonHomePage objectrepo;
 
 	@BeforeClass
@@ -57,20 +59,34 @@ public class AmazonTest {
 		}
 	}
 
-	@Test
+	@Test(priority = 0)
+	@Parameters("email")
+	public void email(String email) {
+		obj = new AmazonLogin(driver);
+		obj.em(email);
+	}
+
+	@Test(priority = 1)
+	@Parameters("Password")
+	public void password(String Password) {
+		obj = new AmazonLogin(driver);
+		obj.psw(Password);
+	}
+
+	@Test(priority = 2)
 	@Parameters("search")
 	public void HomePageOperation1(String search) {
 		AmazonHomePage page1 = new AmazonHomePage(driver);
 		page1.SearchInAmazon(search);
 	}
 
-	@Test
+	@Test(priority = 3)
 	public void HomePageOperation2() {
 		objectrepo = new AmazonHomePage(driver);
 		objectrepo.selectProduct();
 	}
 
-	@Test
+	@Test(priority = 4)
 	public void addToCartOperation() {
 		AmazonProductPage page2 = new AmazonProductPage(driver);
 		page2.addToCart();

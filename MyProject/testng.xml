@@ -3,6 +3,8 @@
 <suite name="Suite">
 	<test thread-count="5" name="Test">
 		<parameter name="url" value="https://www.amazon.in/" />
+		<parameter name="email" value="lordzeus4646@gmail.com" />
+		<parameter name="Password" value="Lord@123" />
 		<parameter name="search" value="Apple iphone 12" />
 		<classes>
 			<class name="Test_Method.AmazonTest" />
