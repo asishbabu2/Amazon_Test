@@ -30,7 +30,6 @@ public class AmazonHomePage {
 		WebElement we3 = wait.until(ExpectedConditions.visibilityOfElementLocated(searchbutton));
 		we3.click();
 	}
-
 	public void selectProduct() {
 		wait = new WebDriverWait(driver, 20);
 		WebElement we4 = wait.until(ExpectedConditions.visibilityOfElementLocated(product));

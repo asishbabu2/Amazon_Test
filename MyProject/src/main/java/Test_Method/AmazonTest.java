@@ -58,40 +58,34 @@ public class AmazonTest {
 			System.exit(0);
 		}
 	}
-
 	@Test(priority = 0)
 	@Parameters("email")
 	public void email(String email) {
 		obj = new AmazonLogin(driver);
-		obj.em(email);
+		obj.Email(email);
 	}
-
 	@Test(priority = 1)
 	@Parameters("Password")
 	public void password(String Password) {
 		obj = new AmazonLogin(driver);
-		obj.psw(Password);
+		obj.password(Password);
 	}
-
 	@Test(priority = 2)
 	@Parameters("search")
 	public void HomePageOperation1(String search) {
 		AmazonHomePage page1 = new AmazonHomePage(driver);
 		page1.SearchInAmazon(search);
 	}
-
 	@Test(priority = 3)
 	public void HomePageOperation2() {
 		objectrepo = new AmazonHomePage(driver);
 		objectrepo.selectProduct();
 	}
-
 	@Test(priority = 4)
 	public void addToCartOperation() {
 		AmazonProductPage page2 = new AmazonProductPage(driver);
 		page2.addToCart();
 	}
-
 	@AfterClass
 	public void driverInstance2() {
 		driver.quit();

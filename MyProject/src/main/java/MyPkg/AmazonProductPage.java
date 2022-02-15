@@ -17,9 +17,8 @@ public class AmazonProductPage {
 	public AmazonProductPage(WebDriver driver) {
 		this.driver = driver;
 	}
-
 	By addtocart = By.xpath("//input[@id='add-to-cart-button']");
-
+	
 	public void addToCart() {
 		wait = new WebDriverWait(driver, 20);
 		String handle = driver.getWindowHandle();
