@@ -18,8 +18,8 @@ public class AmazonLogin {
 
 	public void Email(String email) {
 		wait = new WebDriverWait(driver, 20);
-		WebElement we1 = wait.until(ExpectedConditions.visibilityOfElementLocated(signinButton));
-		we1.click();
+		WebElement we0 = wait.until(ExpectedConditions.visibilityOfElementLocated(signinButton));
+		we0.click();
 		WebElement we2 = wait.until(ExpectedConditions.visibilityOfElementLocated(emailID));
 		we2.sendKeys(email);
 		WebElement we3 = wait.until(ExpectedConditions.visibilityOfElementLocated(continueButton));
